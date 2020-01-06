@@ -212,29 +212,37 @@
 <#if tableOperate>
       <el-table-column label="操作" align="center" width="230" fixed="right">
         <template slot-scope="{row}">
-    <#if this.entityFeature.show>
-          <el-button size="mini"
-                     @click="handleShow(row)" class="table-inner-button">查看</el-button>
-    </#if>
-    <#if this.entityFeature.update>
-          <el-button type="primary" size="mini"
-                     @click="handleUpdate(row)" class="table-inner-button">编辑</el-button>
-    </#if>
-    <#if this.entityFeature.delete>
-          <el-button type="danger" size="mini"
-                     @click="handleDeleteSingle(row)" class="table-inner-button">删除</el-button>
-    </#if>
-    <#list this.holds! as otherEntity,mtm>
-        <#assign otherCName=otherEntity.className?capFirst>
-        <#assign entityFeature=mtm.getEntityFeature(this.entityId)>
-        <#if entityFeature.addRemove>
-          <el-button type="success" size="mini"
-                     @click="handle${otherCName}AddRemove(row)" class="table-inner-button">配置${otherEntity.title}</el-button>
-        <#elseIf entityFeature.set>
-          <el-button type="success" size="mini"
-                     @click="handle${otherCName}Setting(row)" class="table-inner-button">配置${otherEntity.title}</el-button>
-        </#if>
-    </#list>
+        <el-dropdown size="mini" split-button type="primary">
+                    更多
+                    <el-dropdown-menu slot="dropdown">
+                      <el-dropdown-item>
+                        <#if this.entityFeature.show>
+                           <el-button size="mini" @click="handleShow(row)" class="table-inner-button">查看</el-button>
+                        </#if>
+                      </el-dropdown-item>
+                      <el-dropdown-item>
+                        <#if this.entityFeature.update>
+                           <el-button type="primary" size="mini" @click="handleUpdate(row)" class="table-inner-button">编辑</el-button>
+                        </#if>
+                      </el-dropdown-item>
+                      <el-dropdown-item>
+                         <#if this.entityFeature.delete>
+                            <el-button type="danger" size="mini" @click="handleDeleteSingle(row)" class="table-inner-button">删除</el-button>
+                         </#if>
+                      </el-dropdown-item>
+                      <el-dropdown-item>
+                          <#list this.holds! as otherEntity,mtm>
+                              <#assign otherCName=otherEntity.className?capFirst>
+                              <#assign entityFeature=mtm.getEntityFeature(this.entityId)>
+                              <#if entityFeature.addRemove>
+                                <el-button type="success" size="mini" @click="handle${otherCName}AddRemove(row)" class="table-inner-button">配置${otherEntity.title}</el-button>
+                              <#elseIf entityFeature.set>
+                                <el-button type="success" size="mini" @click="handle${otherCName}Setting(row)" class="table-inner-button">配置${otherEntity.title}</el-button>
+                              </#if>
+                          </#list>
+                      </el-dropdown-item>
+                    </el-dropdown-menu>
+                  </el-dropdown>
         </template>
       </el-table-column>
 </#if>
