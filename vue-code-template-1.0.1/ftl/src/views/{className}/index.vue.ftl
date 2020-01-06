@@ -142,7 +142,7 @@
 </#if>
     </div>
 
-    <el-table v-loading="listLoading" :data="list"
+    <el-table v-loading="listLoading" :data="list" height="520"
 <#if tableSelect>
               @selection-change="selectionChange"
 </#if>
