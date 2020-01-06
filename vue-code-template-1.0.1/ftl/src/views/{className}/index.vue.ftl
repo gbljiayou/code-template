@@ -63,7 +63,7 @@
       </el-select>
         <#else>
       <el-input v-model="query.${name}" placeholder="${field.fieldDesc}${getRangeQueryTipSuffix(field,false)}"
-                style="width: 200px;" class="filter-item"
+                clearable style="width: 200px;" class="filter-item"
                 @keyup.enter.native="handleQuery"/>
         </#if>
     <#-- 最后考虑Between查询条件 -->
