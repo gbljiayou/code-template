@@ -542,6 +542,9 @@ export default {
     },
         </#if>
     </#list>
+    handleCommand: function (command) {
+      this[command.method](command.arg)
+    }
 </@removeLastComma>
   }
 }
