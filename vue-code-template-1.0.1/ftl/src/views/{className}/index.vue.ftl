@@ -210,7 +210,7 @@
       </el-table-column>
 </#list>
 <#if tableOperate>
-      <el-table-column label="操作" align="center" width="80px" fixed="right">
+      <el-table-column label="操作" align="center" width="100px" fixed="right">
         <template slot-scope="{row}">
             <el-dropdown size="small" trigger="click" @command="handleCommand" style="margin-left:10px;">
                     <span class="el-dropdown-link button-font">操作
