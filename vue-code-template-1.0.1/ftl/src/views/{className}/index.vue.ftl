@@ -401,6 +401,12 @@ export default {
   },
   methods: {
 <@removeLastComma>
+    /**
+     *
+     */
+    handleCommand: function (command) {
+      this[command.method](command.arg)
+    },
     <#if tableSelect>
     /**
      * 选择框变化
@@ -542,9 +548,6 @@ export default {
     },
         </#if>
     </#list>
-    handleCommand: function (command) {
-      this[command.method](command.arg)
-    }
 </@removeLastComma>
   }
 }
