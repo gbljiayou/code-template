@@ -26,7 +26,8 @@
     "vue": "2.6.10",
     "vue-router": "3.0.6",
     "vuex": "3.1.0",
-    "screenfull": "4.2.0"
+    "screenfull": "4.2.0",
+    "vue-i18n": "7.3.2"
   },
   "devDependencies": {
     "@babel/core": "7.0.0",
