@@ -5,7 +5,10 @@
     <breadcrumb class="breadcrumb-container" />
 
     <div class="right-menu">
+      <!--全屏切换组件-->
       <screenfull id="screenfull" class="right-menu-item hover-effect" />
+      <!--国际化切换组件-->
+      <lang-select class="right-menu-item hover-effect" />
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
           <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">
@@ -37,12 +40,14 @@ import { mapGetters } from 'vuex'
 import Breadcrumb from '@/components/Breadcrumb'
 import Hamburger from '@/components/Hamburger'
 import Screenfull from '@/components/Screenfull'
+import LangSelect from '@/components/LangSelect'
 
 export default {
   components: {
     Breadcrumb,
     Hamburger,
-    Screenfull
+    Screenfull,
+    LangSelect
   },
   computed: {
     ...mapGetters([
