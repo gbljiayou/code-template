@@ -122,6 +122,7 @@
     <#assign hasQueryField = true>
     <@displayQueryField mtmCascadeExt.cascadeField mtmCascadeExt.alias/>
 </#list>
+    <el-button-group>
 <#if hasQueryField>
       <el-button class="filter-item" icon="el-icon-search" type="primary"
                  @click="handleQuery">
@@ -140,6 +141,7 @@
         删除
       </el-button>
 </#if>
+    </el-button-group>
     </div>
 
     <el-table v-loading="listLoading" :data="list" height="520"
